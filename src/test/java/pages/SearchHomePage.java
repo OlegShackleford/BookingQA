@@ -33,6 +33,6 @@ public class SearchHomePage {
     }
 
     public String getRatingHotel(String hotel,String rating){
-        return $x(String.format(RATING_OF_HOTEL,hotel,rating)).getText();
+        return $x(String.format(RATING_OF_HOTEL,hotel,rating)).getText().substring(10).trim();
     }
 }
