@@ -8,7 +8,7 @@ public class SearchHomePage {
 
     private String BUTTON_SEARCH = "//button[@type = 'submit']";
     private String FIELD_SEARCH = "//input[@name = 'ss']";
-    private String ALL_TITLES = "//*[@data-testid='title']";
+    public String ALL_TITLES = "//*[@data-testid='title']";
     private String RATING_OF_HOTEL = "//*[text() = '%s']" +
             "/ancestor::div[@data-testid = 'property-card']//div[text() = '%s']";
 
@@ -29,10 +29,10 @@ public class SearchHomePage {
     }
 
     public String getHotelName(String hotel){
-        return  $$x(ALL_TITLES).find(Condition.text(hotel)).getText();
+        return $$x(ALL_TITLES).find(Condition.text(hotel)).getText();
     }
 
     public String getRatingHotel(String hotel,String rating){
-        return $x(String.format(RATING_OF_HOTEL,hotel,rating)).getText();
+        return $x(String.format(RATING_OF_HOTEL,hotel,rating)).getText().substring(10).trim();
     }
 }

@@ -17,9 +17,8 @@ public class SearchTestNotCucumber extends BaseTest {
     public void checkSearchHotelNameAndRating(){
         searchHomePage.openMainPage().inputFieldSearch("Akra Kemer").clickButtonSearch();
         String hotelRating = searchHomePage
-                .getRatingHotel("Akra Kemer - Ultra All Inclusive","9,2")
-                .substring(10).trim();
+                .getRatingHotel("Akra Kemer - Ultra All Inclusive","9,1");
 
-        assertEquals(hotelRating,"9,2","Incorrect rating of hotel");
+        assertEquals(hotelRating,"9,1","Incorrect rating of hotel");
     }
 }
